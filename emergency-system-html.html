@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Emergencias</title>
+    <link rel="stylesheet" href="emergency-system-styles.css">
+    <script src="emergency-system-js.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión de Emergencias</h1>
+        <button onclick="logout()">Cerrar sesión</button>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="card">
+                <h2>Emergencias Activas</h2>
+                <div id="activeEmergencies">0</div>
+            </div>
+            <div class="card">
+                <h2>Recursos Disponibles</h2>
+                <div id="availableResources">0</div>
+            </div>
+            <div class="card">
+                <h2>Tiempo de Respuesta Promedio</h2>
+                <div id="averageResponse">0 min</div>
+            </div>
+        </div>
+
+        <br>
+
+        <form id="emergencyForm">
+            <label for="type">Tipo de Emergencia:</label>
+            <select id="type">
+                <option value="" disabled selected>Seleccione un tipo</option>
+                <option value="medical">Médica</option>
+                <option value="natural">Natural</option>
+                <option value="technological">Tecnológica</option>
+                <option value="security">Seguridad</option>
+            </select>
+
+            <br>
+            <!-- Submenú para seleccionar subtipos -->
+            <div id="sub-menu" style="display: none;">
+                <br>
+                <label for="sub-menu-options">Subtipo:</label>
+                <select id="sub-menu-options"></select>
+            </div>
+            <br>
+
+            <!-- Ubicación con autocompletado -->
+            <div class="form-group">
+                <label for="location">Ubicación</label>
+                <input type="text" id="location" required>
+            </div>
+            
+            <!-- contenedor mapa -->
+            <div id="map" style="height: 200px; width: 100%;"></div>
+            <br>
+            <div class="form-group">
+                <br>
+                <label for="description">Descripción</label>
+                <textarea id="description" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="priority">Prioridad</label>
+                <select id="priority" required>
+                    <option value="high">Alta</option>
+                    <option value="medium">Media</option>
+                    <option value="low">Baja</option>
+                </select>
+            </div>
+            <button type="submit">Reportar Emergencia</button>
+        </form>
+
+        <div class="emergency-list" id="emergencyList"></div>
+    </div>
+
+    <script>
+        // Verificar si el usuario está logueado al cargar la página de emergencias
+        window.onload = function() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'login.html'; // Redirige al login si no está logueado
+            }
+        };
+
+        // Función para cerrar sesión
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html'; // Redirige al login después de cerrar sesión
+        }
+    </script>
+</body>
+</html>
