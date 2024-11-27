@@ -1,22 +1,35 @@
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // Prevenir el envío del formulario
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    // Obtener los valores del formulario
+    
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    // Verificación de las credenciales almacenadas en el localStorage
-    const storedUser = localStorage.getItem(username);
 
-    if (storedUser && storedUser === password) {
-        // Si las credenciales son correctas
-        localStorage.setItem('isLoggedIn', 'true'); // Guardar estado de sesión
-        window.location.href = 'emergency-system-html.html'; // Redirigir a la página de emergencias
+    const storedAdminUser = "admin"; // admin
+    const storedAdminPassword = "admin123"; // Contraseña de admin
+
+
+    
+    if (username === storedAdminUser && password === storedAdminPassword) {
+       
+        localStorage.setItem('isLoggedIn', 'true'); 
+        localStorage.setItem('role', 'admin');      
+        window.location.href = 'admin.html'; // Redirigir al dashboard de admin
+    }
+    
+    else if (username && password) {
+        
+        localStorage.setItem('isLoggedIn', 'true'); 
+        localStorage.setItem('role', 'user');       
+        window.location.href = 'emergency-system-html.html'; // Redirigir 
     } else {
-        // Mostrar un mensaje de error
+        // Mostrar un mensaje de error si las credenciales son incorrectas
         document.getElementById("error-message").style.display = "block";
     }
 });
+
+
 
 document.getElementById("show-register").addEventListener("click", function() {
     document.getElementById("login-container").style.display = "none";

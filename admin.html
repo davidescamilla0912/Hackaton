@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <img src="/img/admin.jpg" alt="Logo" class="logo img">
+            </div>
+            
+            
+            <nav>
+                <ul>
+                    <li><a href="#" aria-label="Home"><span class="icon"><img src="/img/25694.png" alt="Home"class="logo img"></span></a></li>></span></a></li>
+
+                    <li><a href="#" aria-label="Home"><span class="icon"><img src="/img/analisis.png" alt="Home"class="logo img"></span></a></li>></span></a></li>
+
+                    <li><a href="#" aria-label="Home"><span class="icon"><img src="/img/mensajes.webp" alt="Home"class="logo img"></span></a></li>></span></a></li>
+
+                    <li><a href="#" aria-label="Home"><span class="icon"><img src="/img/users.png" alt="Home"class="logo img"></span></a></li>></span></a></li>
+
+                    <li><a href="#" aria-label="Home"><span class="icon"><img src="/img/notificaciones.avif" alt="Home"class="logo img"></span></a></li>></span></a></li>
+
+                    <li><a href="#" aria-label="Home"><span class="icon"><img src="/img/images.png" alt="Home"class="logo img"></span></a></li>></span></a></li>
+
+                </ul>
+            </nav>
+            <div class="user-avatar">
+                <!-- User avatar placeholder -->
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <header>
+                <h1>Dashboard</h1>
+                <div class="date-range">
+                    <select aria-label="View type">
+                        <option>DAILY</option>
+                        <option>WEEKLY</option>
+                        <option>MONTHLY</option>
+                        <option>YEARLY</option>
+                    </select>
+                    <span>10-06-2020 - 16-06-2020</span>
+                </div>
+            </header>
+
+            <!-- Stat cards -->
+            <section class="stat-cards">
+                <div class="card">
+                    <h2>Emergencias pendientes</h2>
+                    <p>3</p>
+                </div>
+                <div class="card">
+                    <h2>Emergencias Resueltas</h2>
+                    <p>1000+</p>
+                </div>
+                <div class="card">
+                    <h2>Tiempo de Respuesta</h2>
+                    <p>5min</p>
+                </div>
+                <div class="card">
+                    <h2>Paises Sistema Disponible</h2>
+                    <p>50+</p>
+                </div>
+            </section>
+
+            <!-- Charts section -->
+            <section class="charts">
+                <div class="chart">
+                    <h2>Overview</h2>
+                    <p>Emergencias mes pasado</p>
+                    <p> 300+ </p>
+                    <p><strong>vidas salvadas</strong></p>  
+                    <img src="/img/d609226f-661b-49c1-9ad2-b4aa7fa81e76.webp"class="imagen">
+                </div>
+                <div class="chart">
+                    <h2>Analytics</h2>
+                    <div class="circle-chart">
+                        <p>80%</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent activities and order status -->
+            <section class="activities-and-orders">
+                <div class="recent-activities">
+                    <h2>Recent Activities</h2>
+                    <ul>
+                        <li>
+                            <span class="icon"><!-- Activity icon --></span>
+                            <div>
+                                <p>Task Updated</p>
+                                <p>45 Mins Ago</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="icon"><!-- Activity icon --></span>
+                            <div>
+                                <p>Deal Added</p>
+                                <p>1 Day Ago</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-status">
+                    <h2>Order Status</h2>
+                    <div class="search">
+                        <input type="text" placeholder="Search..." aria-label="Search orders">
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>INVOICE</th>
+                                <th>CUSTOMERS</th>
+                                <th>FROM</th>
+                                <th>PRICE</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12398</td>
+                                <td>Charley Jons</td>
+                                <td>Russia</td>
+                                <td>$2450</td>
+                                <td><span class="status">Process</span></td>
+                            </tr>
+                            <tr>
+                                <td>12399</td>
+                                <td>Charley Jons</td>
+                                <td>Russia</td>
+                                <td>$2450</td>
+                                <td><span class="status">Done</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
